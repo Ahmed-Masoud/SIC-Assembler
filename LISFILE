@@ -1,0 +1,27 @@
+1000        PROG     START    1000
+1000        BIBI     EQU      5
+1000 041000          LDX      BIBI
+1003 50900f MOVECH   LDCH     STR1,X
+1006 54901a          STCH     STR2,X
+1009 2c102c          TIX      ELEVEN
+100c 4c0000          RSUB     MOVECH
+100f 746573 STR1     BYTE     C'test string'
+     742073
+     747269
+     6e67
+101a        STR2     RESB     11
+1025 bd     HEX      BYTE     X'bd'
+1026 000000 ZERO     WORD     0
+                     ORG      MOVECHC
+		****** undefined in operand
+1029 000001 VAR1     WORD     1
+102c 000002 VAR2     WORD     2
+102f 000003 VAR3     WORD     3
+                     ORG 
+1029        ONE      EQU      VAR1 - VAR2
+1029        BIBO     EQU      BIBI+15
+1029        TWO      EQU      ONE+1
+1029 001029 NEW      WORD     BIBO
+102c 00000b ELEVEN   WORD     11
+102f 001029 TEST     WORD     TWO
+1032                 END      PROG

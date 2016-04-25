@@ -1,0 +1,23 @@
+PROG     START   1000
+BIBI     EQU     5
+         LDX     BIBI
+MOVECH   LDCH    STR1,X
+         STCH    STR2,X
+         TIX     ELEVEN
+         RSUB    MOVECH
+STR1     BYTE    C'test string'
+STR2     RESB    11
+HEX      BYTE    X'bd'
+ZERO     WORD    0
+         ORG     MOVECHC
+VAR1     WORD    1
+VAR2     WORD    2
+VAR3     WORD    3
+         ORG
+ONE      EQU     VAR1 - VAR2
+BIBO     EQU     BIBI+15
+TWO      EQU     ONE+1
+NEW      WORD    BIBO
+ELEVEN   WORD    11
+TEST     WORD    TWO
+         END     PROG
